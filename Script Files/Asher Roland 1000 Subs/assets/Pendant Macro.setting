@@ -1,0 +1,193 @@
+{
+	Tools = ordered() {
+		PendantMacro = GroupOperator {
+			Outputs = ordered() {
+				MainOutput1 = InstanceOutput {
+					Source = "Output",
+					SourceOp = "uRenderer2"
+				}
+			},
+			UserControls = ordered() {
+			},
+			Tools = ordered() {
+				uLoader1 = uLoader {
+					Inputs = {
+						Filename = Input { Value = "Scripts://Utility\\Asher Roland 1000 Subs\\assets\\Pendant.usdc" }
+					},
+					ViewInfo = OperatorInfo { Pos = { 385, -280.5 } },
+					CustomData = { MediaProps = { MEDIA_ID = "7a85b357-1f6b-46a4-b690-10221062a42c" } }
+				},
+				uTransform2 = uTransform {
+					ViewInfo = OperatorInfo { Pos = { 495, -280.5 } },
+					Inputs = {
+						["USDXf.Translate.Y"] = Input { Value = -2.913 },
+						["USDXf.Translate.Z"] = Input { Value = -1.85 },
+						SceneInput = Input {
+							Source = "Output",
+							SourceOp = "uLoader1"
+						}
+					}
+				},
+				uDomeLight1 = uDomeLight {
+					ViewInfo = OperatorInfo { Pos = { 605, -313.5 } },
+					Inputs = {
+						Exposure = Input { Value = -1.53 },
+						Image = Input { Value = "Scripts://Utility\\Asher Roland 1000 Subs\\assets\\photo_studio_loft_hall_2k.hdr" }
+					}
+				},
+				uMerge1 = uMerge {
+					ViewInfo = OperatorInfo { Pos = { 605, -280.5 } },
+					Inputs = {
+						SceneInput2 = Input {
+							Source = "Output",
+							SourceOp = "uDomeLight1"
+						},
+						SceneInput1 = Input {
+							Source = "Output",
+							SourceOp = "uTransform2"
+						}
+					}
+				},
+				UsersControls = uTransform {
+					UserControls = ordered() {
+						["USDXf.Translation"] = {
+							IC_Visible = true,
+							LBLC_NumInputs = 3,
+							LBLC_MultiLine = true,
+							INP_Integer = true,
+							LINKID_DataType = "Number",
+							INPID_InputControl = "LabelControl",
+							INP_Passive = true,
+							LINKS_Name = "Translation",
+							LBLC_DropDownButton = true
+						},
+						["USDXf.Rotation"] = {
+							IC_Visible = true,
+							LBLC_NumInputs = 4,
+							LBLC_MultiLine = true,
+							INP_Integer = true,
+							LINKID_DataType = "Number",
+							INPID_InputControl = "LabelControl",
+							INP_Passive = true,
+							LINKS_Name = "Rotation",
+							LBLC_DropDownButton = true
+						}
+					},
+					CtrlWZoom = false,
+					NameSet = true,
+					ViewInfo = OperatorInfo { Pos = { 715, -280.5 } },
+					Inputs = {
+						["USDXf.Pivot.Z"] = Input { Value = -1.63110774645566 },
+						SceneInput = Input {
+							Source = "Output",
+							SourceOp = "uMerge1"
+						},
+						["USDXf.Pivot.X"] = Input { Value = 0.0134576617250559 },
+						["USDXf.Pivot.Y"] = Input { Value = -0.288669444179695 },
+						["USDXf.Rotate.Y"] = Input { Value = -27.6 }
+					}
+				},
+				uRenderer2 = uRenderer {
+					ViewInfo = OperatorInfo { Pos = { 825, -280.5 } },
+					Inputs = {
+						UseFrameFormatSettings = Input { Value = 1 },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" } },
+						Lighting = Input { Value = FuID { "Scene" } },
+						SceneInput = Input {
+							Source = "Output",
+							SourceOp = "UsersControls"
+						},
+						Width = Input { Value = 1920 },
+						EnableShadows = Input { Value = 1 },
+						GlobalOut = Input { Value = 119 },
+						Height = Input { Value = 1080 }
+					}
+				}
+			},
+			ViewInfo = GroupInfo {
+			},
+			Inputs = ordered() {
+				UsersControls_Translation = InstanceInput {
+					Page = "Controls",
+					SourceOp = "UsersControls",
+					Name = "Translation",
+					Source = "USDXf.Translation",
+					Default = 1
+				},
+				UsersControls_XOffset = InstanceInput {
+					Page = "Controls",
+					SourceOp = "UsersControls",
+					MinScale = -2,
+					Center = 0,
+					Name = "X Offset",
+					Source = "USDXf.Translate.X",
+					MaxScale = 2,
+					Default = 0
+				},
+				UsersControls_YOffset = InstanceInput {
+					Page = "Controls",
+					SourceOp = "UsersControls",
+					MinScale = -2,
+					Center = 0,
+					Name = "Y Offset",
+					Source = "USDXf.Translate.Y",
+					MaxScale = 2,
+					Default = 0
+				},
+				UsersControls_ZOffset = InstanceInput {
+					Page = "Controls",
+					SourceOp = "UsersControls",
+					MinScale = -10,
+					Center = 0,
+					Name = "Z Offset",
+					Source = "USDXf.Translate.Z",
+					MaxScale = 10,
+					Default = 0
+				},
+				UsersControls_Rotation = InstanceInput {
+					Page = "Controls",
+					SourceOp = "UsersControls",
+					Name = "Rotation",
+					Source = "USDXf.Rotation",
+					Default = 1
+				},
+				UsersControls_RotationOrder = InstanceInput {
+					Page = "Controls",
+					SourceOp = "UsersControls",
+					Name = "Rotation Order",
+					Source = "USDXf.Rotate.RotOrder"
+				},
+				UsersControls_XRotation = InstanceInput {
+					Page = "Controls",
+					SourceOp = "UsersControls",
+					MinScale = -180,
+					Center = 0,
+					Name = "X Rotation",
+					Source = "USDXf.Rotate.X",
+					MaxScale = 180,
+					Default = 0
+				},
+				UsersControls_YRotation = InstanceInput {
+					Page = "Controls",
+					SourceOp = "UsersControls",
+					MinScale = -180,
+					Center = 0,
+					Name = "Y Rotation",
+					Source = "USDXf.Rotate.Y",
+					MaxScale = 180,
+					Default = -27.6
+				},
+				UsersControls_ZRotation = InstanceInput {
+					Page = "Controls",
+					SourceOp = "UsersControls",
+					MinScale = -180,
+					Center = 0,
+					Name = "Z Rotation",
+					Source = "USDXf.Rotate.Z",
+					MaxScale = 180,
+					Default = 0
+				}
+			}
+		}
+	}
+}
