@@ -16,6 +16,8 @@ You can install the game into your `Scripts/Utility/` folder by downloading the 
 
 ## Playing the Game
 
+This game must be played in a Fusion Comp with at least a MediaOut node. The best way to achieve this is to drag a "fusion composition" from the Effects panel on the edit page and enter the comp from there. Now launch the script from: `Workflow/Scripts/Asher Roland 1000 Subs/The DVR Escape Game`
+
 After launching the game, you will be greeted with the game loading in piece by piece then the textbox will popup with instructions on how to play and your objective.
 
 ![Image of Davinci Resolve Escape Room Intro](./imgs/Screenshot%202025-01-16%20194604.png "The Escape Game Intro")
