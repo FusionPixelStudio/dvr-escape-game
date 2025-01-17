@@ -8,6 +8,8 @@
 
 DVR-Escape-Game is an Open Source Project with improving and discovering more about the Davinci Resolve/Fusion Scripting API in mind. Starting as just a small escape room game by [Asher Roland](https://www.youtube.com/@asherroland) with the goal of starting the conversation and showcasing the less used features of the API.
 
+The idea behind this open source project is to build on the original script and for other to build their own games with the information from the original. See our [Contributing Guide](CONTRIBUTING.md) for details about how to contribute.
+
 ## Installation
 
 You can install the game into your `Scripts/Utility/` folder by downloading the folder `Asher Roland 1000 Subs` from releases and unzipping the files. Then, without moving any files out from where they are, you can drag the `The DVR Escape Game.lua` file into Fusion. It will install itself and let you know it has finished. You should now see it under `Workflow/Scripts/Asher Roland 1000 Subs/The DVR Escape Game` in Davinci Resolve's menu.
@@ -23,6 +25,8 @@ After launching the game, you will be greeted with the game loading in piece by 
 Users with **FREE** Davinci Resolve 19.1 and after will be unable to play this game because of changes by Blackmagic Design to what is available to the free users of Resolve by removing the ability to access the Scripting UI System. The only way to get around this is to install an earlier version of Davinci Resolve to restore the UI access.
 
 Users on certain Mac systems will have difficulty playing the game. The hotkeys to move around and interact with objects will be not usable and you will be required to move with the UI buttons to the left of the screen. In some systems you may not even be able to interact with objects.
+
+This game has not been tested on any Linux Systems.
 
 ## Support Channels
 
